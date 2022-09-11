@@ -1,0 +1,9 @@
+.trending-giphy {
+    margin-right: 3px;
+    padding: 0 7px;
+}
+
+.trending-giphy img {
+    height: 100%;
+    border-radius: 3px;
+}

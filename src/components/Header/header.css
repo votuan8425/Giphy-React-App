@@ -1,0 +1,120 @@
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header img {
+    width: 150px;
+}
+
+.logo-header{
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+}
+
+.button {
+    background-color: #6d63ff;
+    width: 75px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    border-radius: 2px;
+    cursor: pointer;
+
+}
+
+.profile {
+    background-color: #4a494a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile img {
+    width: 35px;
+}
+
+.button-wrapper {
+    background-color: teal;
+    height: 35px;
+    display: flex;
+    align-items: flex-start;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.icon-header{
+    cursor: pointer;
+}
+
+.reactions {
+    background: linear-gradient(90deg, #43e0ff 0%, #456ffc 75%);
+}
+
+.entertainment {
+    background: linear-gradient(90deg, #456ffc 0%, #7145fc 69%);
+}
+
+.sports {
+    background: linear-gradient(90deg, #7145fc 0%, #a945fc 71%, #c445fc 92%);
+}
+
+.stickers {
+    background: linear-gradient(90deg, #c445fc 0%, #ef45fc 75%);
+}
+
+.artists {
+    background: linear-gradient(90deg, #ef45fc 0%, #fc45c5 62%);
+}
+
+.moreverticon {
+    background: linear-gradient(90deg, #fc45c5 0%, #fc4584 76%);
+}
+
+.menu-button {
+    background-color: #121212;
+    height: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+.hover-reactions:hover {
+    transition: all 0.6s ease-in-out;
+    background: linear-gradient(90deg, #43e0ff 0%, #456ffc 75%);
+}
+
+.hover-entertainment:hover {
+    transition: all 0.6s ease-in-out;
+    background: linear-gradient(90deg, #456ffc 0%, #7145fc 69%);
+}
+
+.hover-sports:hover {
+    transition: all 0.6s ease-in-out;
+    background: linear-gradient(90deg, #7145fc 0%, #a945fc 71%, #c445fc 92%);
+}
+
+.hover-stickers:hover {
+    transition: all 0.6s ease-in-out;
+    background: linear-gradient(90deg, #c445fc 0%, #ef45fc 75%);
+}
+
+.hover-artists:hover {
+    transition: all 0.6s ease-in-out;
+    background: linear-gradient(90deg, #ef45fc 0%, #fc45c5 62%);
+}
+
+.hover-moreverticon:hover {
+    transition: all 0.6s ease-in-out;
+    background: linear-gradient(90deg, #fc45c5 0%, #fc4584 76%);
+}

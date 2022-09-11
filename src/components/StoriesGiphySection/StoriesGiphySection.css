@@ -1,0 +1,187 @@
+.landscape-left-row{
+    display: grid;
+    grid-template-columns: 550px 265px 265px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.landscape-right-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.no-landscape-row{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.landscape-middle-row{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+
+.giphy-title{
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+
+.giphy-title img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.5s ease-out;
+}
+
+.giphy-title:hover img{
+    transform: scale(1.4);
+}
+
+.text-title{
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+
+.line-top-purple {
+    background-color: #9933ff;
+    height: 6px;
+}
+
+.line-middle-purple {
+    background-color: #6d24b7;
+    height: 6px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.line-bottom-purple {
+    background-color: #521d88;
+    height: 6px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.line-top-sunshine {
+    background-color: #d4ca4d;
+    height: 6px;
+}
+
+.line-middle-sunshine {
+    background-color: #b4ac44;
+    height: 6px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.line-bottom-sunshine {
+    background-color: #938c37;
+    height: 6px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.line-top-turqoise {
+    background-color: #00ccff;
+    height: 6px;
+}
+
+.line-middle-turqoise {
+    background-color: #18a6ca;
+    height: 6px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.line-bottom-turqoise {
+    background-color: #127189;
+    height: 6px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.line-top-bluepurple {
+    background-color: #6157ff;
+    height: 6px;
+}
+
+.line-middle-bluepurple {
+    background-color: #4339c6;
+    height: 6px;
+}
+
+.line-bottom-bluepurple {
+    background-color: #2f2888;
+    height: 6px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+.overlay-purple {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    height: 0;
+    transition: 0.5s ease;
+    background: linear-gradient(0deg,
+            rgba(153, 51, 255, 0.8506838905775076) 7%,
+            rgba(224, 224, 224, 0) 30%);
+}
+
+.overlay-turqoise {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    height: 0;
+    transition: 0.5s ease;
+    background: linear-gradient(0deg, #00ccff 7%, #e0e0e000 30%);
+}
+
+.overlay-sunshine {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    height: 0;
+    transition: 0.5s ease;
+    background: linear-gradient(0deg, #d4ca4d 7%, #e0e0e000 30%);
+}
+
+.overlay-bluepurple {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    height: 0;
+    transition: 0.5s ease;
+    background: linear-gradient(0deg, #6157ff 7%, #e0e0e000 30%);
+}
+
+.giphy-title:hover .overlay-purple{
+    height: 100%;
+}
+.giphy-title:hover .overlay-sunshine{
+    height: 100%;
+}
+.giphy-title:hover .overlay-bluepurple{
+    height: 100%;
+}
+.giphy-title:hover .overlay-turqoise{
+    height: 100%;
+}

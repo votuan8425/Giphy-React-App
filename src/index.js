@@ -12,6 +12,10 @@ import {
 import SearchDetail from "./components/SearchDetail/SearchDetail";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AllTrending from "./components/AllTrending/AllTrending";
+import ItemDetail from "./components/ItemDetail/ItemDetail";
+import AllArtists from "./components/AllTrending/AllArtists";
+import AllClips from "./components/AllTrending/AllClips";
+import AllStories from './components/AllTrending/AllStories'
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -26,6 +30,10 @@ ReactDOM.render(
         <Route path="/home" element={<App />} />
         <Route path="/search/:input" element={<SearchDetail />} />
         <Route path="/trending-gifs" element={<AllTrending />} />
+        <Route path="/gifs/:itemID" element={<ItemDetail />} />
+        <Route path="/artists" element={<AllArtists />} />
+        <Route path="/clips" element={<AllClips />} />
+        <Route path="/stories" element={<AllStories />} />
       </Routes>
     </Router>
   </React.StrictMode>,

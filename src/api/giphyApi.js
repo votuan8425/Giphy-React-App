@@ -4,7 +4,7 @@ const GIPHY_BASE_URL = `https://api.giphy.com/v1/gifs/`;
 
 const DEFAULT_PARAMS = {
     api_key: "cFWYJ56iHT3CLYXtgzbZhjz7DuDudzmg",
-    limit: 50,
+    limit: 10,
 }
 
 export const fetchTrendingGiphys = () =>{

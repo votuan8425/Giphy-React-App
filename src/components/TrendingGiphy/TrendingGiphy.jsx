@@ -1,10 +1,26 @@
 import React from 'react'
 import './TrendingGiphy.css'
-
-const TrendingGiphy = ({ giphy }) => {
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+const TrendingGiphy = ({ props, giphy }) => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const handleItem = () => {
+        navigate(`/gifs/${giphy.slug}`, {
+            state: {
+                item: giphy
+            }
+        })
+        console.log(giphy)
+    }
     return (
         <div className='trending-giphy' key={giphy.id}>
-            <img src={giphy.images.downsized.url} alt={giphy.title} />
+            <Link
+                to={`/gifs/${giphy.slug}`}
+                state={{
+                    data: handleItem
+                }}>
+                <img src={giphy.images.downsized.url} alt={giphy.title} onClick={handleItem} />
+            </Link>
         </div>
     )
 }

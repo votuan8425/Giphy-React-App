@@ -1,0 +1,85 @@
+.itemDetail-container{
+    display: flex;
+    flex: 1;
+}
+.itemDetail-left{
+    flex:1;
+    padding: 20px 0;
+    text-align: left;
+
+}
+.itemDetail-right{
+    flex: 3;
+    display: flex;
+    padding: 20px;
+}
+.user-detail{
+    display: flex;
+}
+.user-detail img{
+    max-width: 50px;
+    max-height: 50px;
+}
+.name{
+    padding-left: 15px;
+}
+.name h2{
+    font-weight: 700;
+    font-size: 18px;
+}
+.channel{
+    transition: color 0.25s ease;
+    display: inline-block;
+    margin-left: -1px;
+    margin-right: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #a6a6a6;
+    font-weight: bold;
+    font-size: 14px;
+}
+.main-img img{
+    width: 500px;
+    height: 500px;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.user-desc{
+    color: rgb(166, 166, 166);
+    white-space: pre-wrap;
+    margin: 0px 0px 4px;
+    font-size: 14px;
+    line-height: 19px;
+    transition: max-height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+    padding-top: 20px;
+    max-height: 77px;
+    overflow: hidden;
+}
+
+.user-social img{
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    margin-bottom: 8px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+
+.rating{
+    padding: 0 20px;
+    font-size: 19px;
+    font-weight: 700;
+    text-align: left;
+
+}
+
+.fb .MuiSvgIcon-root, .share .MuiSvgIcon-root, .embed .MuiSvgIcon-root{
+    margin-right: 15px;
+}
+
+.fb, .share, .embed{
+    margin-bottom: 15px;
+}

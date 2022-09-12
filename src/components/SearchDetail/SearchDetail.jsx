@@ -3,8 +3,7 @@ import { useParams } from 'react-router-dom'
 import Header from '../Header/Header';
 import SearchContainer from '../SearchContainer/SearchContainer';
 import Container from "react-bootstrap/Container";
-import axios from 'axios';
-import { fetchSearchedGiphys, fetchTrendingGiphys } from '../../api/giphyApi'
+import { fetchSearchedGiphys } from '../../api/giphyApi'
 import TrendingGiphy from '../TrendingGiphy/TrendingGiphy';
 const SearchDetail = () => {
     const { input } = useParams();

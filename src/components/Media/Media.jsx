@@ -9,27 +9,30 @@ import giphyArtists from '../../artists'
 import { fetchSearchedGiphys, fetchTrendingGiphys } from '../../api/giphyApi'
 import ArtitstGiphy from '../ArtitstGiphy/ArtitstGiphy'
 import ClipsGiphySection from '../ClipsGiphySection/ClipsGiphySection'
-import StoriesGiphySection from '../StoriesGiphySection/StoriesGiphySection'
+// import StoriesGiphySection from '../StoriesGiphySection/StoriesGiphySection'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import axios from 'axios'
+import LineBox from '../LineBox/LineBox'
 
 
 const Media = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const [trending, setTrending] = useState([]);
     const [artists, setArtists] = useState([]);
     const [clips, setClips] = useState([]);
-    const [stories, setStories] = useState([]);
 
     const randomizeData = (content) => {
         return content.data.sort(() => Math.random() - 0.5);
     }
 
-    //dev
     const UnsplashImage = ({ url, key }) => (
         <div className="image-item" key={key} >
-            <img src={url} />
+            <img src={url} alt="" />
+            <LineBox />
         </div>
     );
     const [images, setImages] = useState([]);
@@ -38,9 +41,9 @@ const Media = () => {
 
     const fetchImages = (count = 10) => {
         axios
-            .get(`https://api.giphy.com/v1/gifs/search?q="lalisa"&api_key=cFWYJ56iHT3CLYXtgzbZhjz7DuDudzmg&offset=${count}`)
+            .get(`https://api.giphy.com/v1/gifs/search?q="lalisa"&api_key=cFWYJ56iHT3CLYXtgzbZhjz7DuDudzmg&limit=${count}`)
             .then(res => {
-                setImages([...images, ...res.data]);
+                setImages([...images, ...res.data.data]);
                 setIsLoaded(true);
             });
     };
@@ -50,6 +53,7 @@ const Media = () => {
             const trending = await fetchTrendingGiphys();
             setTrending(randomizeData(trending.data))
         }
+
         const getArtists = async () => {
             const artists = await Promise.all(
                 giphyArtists.map((giphyArtists) => {
@@ -58,16 +62,26 @@ const Media = () => {
             )
             setArtists(artists.flat())
         }
+
         const getSearchedGiphys = async (query, setState) => {
             const searched = await fetchSearchedGiphys(query);
             setState(randomizeData(searched.data))
         }
+        const handleItem = () => {
+            navigate(`/gifs/${artists.slug}`, {
+                state: {
+                    item: artists
+                }
+            })
+            console.log(artists)
+        }
+
         getTrendingGiphys();
         getArtists();
         getSearchedGiphys("bitcoin", setClips);
-        // getSearchedGiphys("lalisa", setStories);
         fetchImages();
     }, []);
+
 
     return (
         <div className="media">
@@ -95,7 +109,7 @@ const Media = () => {
                         <h1>Artists</h1>
                     </div>
                     <div className="row-header__right">
-                        <Link to="/trending-gifs">All the Gifs </Link>
+                        <Link to="/artists">All GIPHY Artists</Link>
                         <ChevronRightIcon className="icon-right" />
                     </div>
                 </div>
@@ -112,7 +126,7 @@ const Media = () => {
                         <h1>Clips</h1>
                     </div>
                     <div className="row-header__right">
-                        <Link to="/trending-gifs">All the Gifs </Link>
+                        <Link to="/clips">All Clips </Link>
                         <ChevronRightIcon className="icon-right" />
                     </div>
                 </div>
@@ -127,14 +141,14 @@ const Media = () => {
                         <h1>Stories</h1>
                     </div>
                     <div className="row-header__right">
-                        <Link to="/trending-gifs">All the Gifs </Link>
+                        <Link to="/stories">All the Gifs </Link>
                         <ChevronRightIcon className="icon-right" />
                     </div>
                 </div>
                 <div className="stories-container">
                     <InfiniteScroll
                         dataLength={images}
-                        next={() => fetchImages(5)}
+                        next={() => fetchImages(10)}
                         hasMore={true}
                         loader={
                             <img
@@ -145,8 +159,15 @@ const Media = () => {
                         <div className="image-grid" style={{ marginTop: "30px" }}>
                             {loaded ?
                                 images.map((image, index) => (
-                                    <UnsplashImage url={image.images.downsized.url} key={index} />
-                                )) : ""}
+                                    <Link
+                                        to={`/gifs/${image.slug}`}
+                                        state={{
+                                            data: image
+                                        }}>
+                                        <UnsplashImage url={image.images.downsized.url} key={index} />
+                                    </Link>
+                                )) : ""
+                            }
                         </div>
                     </InfiniteScroll>
                 </div>
